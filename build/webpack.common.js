@@ -18,6 +18,23 @@ const entry = (basePath =>
 
 console.log('data => ', entry)
 
-// module.exports = {
-//
-// }
+module.exports = {
+  entry,
+  output: {
+    path: resolve('dist/js'),
+    filename: '[name].js',
+  },
+  resolve: {
+    alias: {
+      src: resolve('src'),
+      '@': resolve('src'),
+    },
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  },
+  module: {
+
+  },
+  plugins: [
+
+  ]
+}
