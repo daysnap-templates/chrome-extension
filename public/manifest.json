@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Extension Template",
+  "description": "react chrome-extension template",
+  "version": "1.0",
+
+  "icons": {
+
+  },
+
+  "permissions": [
+
+  ],
+
+  "action": {
+    "default_icon": "icons/ic_16.png",
+    "default_title": "Extension Popup",
+    "default_popup": "html/popup.html"
+  }
+
+}
