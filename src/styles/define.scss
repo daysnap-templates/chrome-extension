@@ -1,0 +1,15 @@
+@import "~@daysnap/define-sass";
+@import "theme";
+
+@function j($px) {
+  @if($px == 1) {
+    @return $px * 1px;
+  }
+  @return $px / 16 * 1rem;
+}
+
+@mixin global() {
+  :global{
+    @content;
+  }
+}

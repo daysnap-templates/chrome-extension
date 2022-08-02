@@ -16,13 +16,11 @@ const entry = (basePath =>
   }, {})
 )(resolve('src/entry'))
 
-console.log('data => ', entry)
-
 module.exports = {
   entry,
   output: {
-    path: resolve('dist/js'),
-    filename: '[name].js',
+    path: resolve('dist'),
+    filename: 'js/[name].js',
   },
   resolve: {
     alias: {
@@ -63,7 +61,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: 'static/[name]-[hash].[ext]'
+              name: 'img/[name]-[hash].[ext]'
             }
           }
         ]
@@ -72,7 +70,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '../css/[name].css',
+      filename: 'css/[name].css',
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({

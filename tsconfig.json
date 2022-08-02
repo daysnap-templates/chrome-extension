@@ -22,6 +22,9 @@
     },
     "incremental": true
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": [
+    "src/**/*",
+    "typings/**/*"
+  ],
   "exclude": ["node_modules"]
 }
