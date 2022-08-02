@@ -75,5 +75,16 @@ module.exports = {
       filename: '../css/[name].css',
     }),
     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: resolve('public'),
+          to: resolve('dist'),
+        }
+      ]
+    })
   ]
 }
