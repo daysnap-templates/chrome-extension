@@ -6,6 +6,7 @@ const App = () => {
 }
 
 const d = 1
+const a = 1
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 createRoot(document.getElementById('root')!).render(<App />)
