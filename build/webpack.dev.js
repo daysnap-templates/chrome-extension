@@ -9,7 +9,7 @@ module.exports = merge(config, {
     lazy: false,
     writeToDisk: true, // 写入到硬盘
     disableHostCheck: true, // 禁止安全检测
-    contentBase: resolve('public'), // 静态文件目录
+    contentBase: resolve('dist'), // 静态文件目录
     host: '0.0.0.0', // host
     port: 9001, // 端口
     compress: true, // gzip 压缩

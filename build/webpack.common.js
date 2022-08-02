@@ -76,13 +76,26 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-
+      template: resolve('public/html/popup.html'),
+      filename: resolve('dist/html/popup.html'),
+      minify: {
+        removeAttributeQuotes: false, // 移除属性的引号
+        removeComments: false, // 移除注释
+        collapseWhitespace: false, // 折叠空白区域
+      },
+      inject: 'body',
+      chunks: [
+        'popup'
+      ]
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
           from: resolve('public'),
           to: resolve('dist'),
+          globOptions: {
+            ignore: ["**/html/**"],
+          }
         }
       ]
     })
