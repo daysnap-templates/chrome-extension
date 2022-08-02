@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -17,6 +16,7 @@ const entry = (basePath =>
 )(resolve('src/entry'))
 
 module.exports = {
+  target: 'web',
   entry,
   output: {
     path: resolve('dist'),
@@ -38,6 +38,23 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'postcss-loader',
+          }
+        ]
+      },
+      {
         test: /\.(scss|sass)$/,
         use: [
           {
@@ -48,6 +65,9 @@ module.exports = {
             options: {
               importLoaders: 1
             },
+          },
+          {
+            loader: 'postcss-loader',
           },
           {
             loader: 'sass-loader',
@@ -61,7 +81,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: 'img/[name]-[hash].[ext]'
+              name: 'images/[name]-[hash].[ext]'
             }
           }
         ]
